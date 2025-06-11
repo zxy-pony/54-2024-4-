@@ -1,0 +1,87 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=pie-half-donut&decal=1&code=PTAEBUAsEsGdQKYA8CGBbADgGwaATggI4Cu0B8AogMKQp4Au8AbgKwB07ADKAPZ6hYU9BHgBQPDPWg8AdqAC8oAN6jQaqfRwAuZarWhhSejoDkLACyAr5UDeioEAAwGAugIljACEaBpr0DPgQCZOn84Bc9c0AIc0BUvUA2U0Apt0Bw50AwJUBgPRM9AF8AGj16Hh4sKQwdFX0DPGgAcyKRU2hhNAS1FL0cUpkAE1y9dQlTFgBSE1T8nAAzY1ATAGMEGWE8atBatVgRaARYHQBtVt18tRl0BA6rOyc3Lx9_ILCouJ719QBPDF3hjEWrzfwURuhiZdAVk3NObrJYYAdgBJgAur1NmMJmUfmYwUCTKDupDrqAQKB3gArL70AyQXCweh0fEoJqICnkoo4dHE0kAQRkNIeAEYABycKH5caNJksnQAZgAbFz0Y0hChVui1EpQEwUFhiA9PEDtmgHiYIpFWZ0ALSsjjdGbczZyhVKh7CtU7Uzaw1dPWeY2zV7KeWK5U6Vmsm0au1RZ1Oo0mE0y90Wr2gVksP2a7WeI16wUu035c2eq1xgORFPJkNht0RzPe32gdXxqKCpPmVPhjOWoXZ4ba2t68wF135cHrRJ6HuJADcQA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/echarts-gl/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/echarts-stat/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/echarts-graph-modularity/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    // This example requires ECharts v5.5.0 or later
+option = {
+   title: {
+    text: '54只养老理财成立至2024年4月底收益率分布'
+  },
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    top: '5%',
+    left: 'center'
+  },
+  series: [
+    {
+      name: '54只养老理财成立至2024年4月底收益率分布',
+      type: 'pie',
+      radius: ['40%', '70%'],
+      center: ['50%', '70%'],
+      // adjust the start and end angle
+      startAngle: 180,
+      endAngle: 360,
+      data: [
+        { value: 2, name: '收益率1%-1.5%' },
+        { value: 6, name: '收益率1.5%-2%' },
+        { value: 11, name: '收益率2%-2.5%' },
+        { value: 15, name: '收益率2.5%-3%' },
+        { value: 6, name: '收益率3%-3.5%' },
+        { value: 11, name: '收益率3.5%-4%' },
+        { value: 3, name: '收益率4%-4.5%' },
+      ]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
